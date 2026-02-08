@@ -1,9 +1,11 @@
-$lottery-black: #19191f;
-$lottery-highlight: #292933;
-$lottery-white: #ecedf3;
-$lottery-grey: #96979b;
-$lottery-red: #ff3b52;
-$lottery-dark-red: #a53749;
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap");
+
+$lottery-black: #0f1116;
+$lottery-highlight: #1f2230;
+$lottery-white: #f4f5f7;
+$lottery-grey: #b6bcc7;
+$lottery-red: #ff5a6a;
+$lottery-dark-red: #b33b4b;
 
 $font-size-h1: 42px;
 $font-size-h2: 36px;
@@ -30,6 +32,11 @@ $font-size-tiny: 12px;
   -webkit-font-smoothing: antialiased !important;
 }
 
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 input:focus,
 select:focus,
 textarea:focus,
@@ -50,18 +57,38 @@ input {
   -moz-osx-font-smoothing: inherit;
 }
 
+:root {
+  color-scheme: dark;
+  --page-bg: #0f1116;
+  --card-bg: rgba(19, 23, 34, 0.92);
+  --card-border: rgba(255, 255, 255, 0.06);
+  --accent: #ffb454;
+  --accent-strong: #f58a4b;
+  --accent-cool: #3fd1c2;
+  --text-primary: #f4f5f7;
+  --text-secondary: #b6bcc7;
+  --text-muted: #8b90a1;
+  --shadow: 0 24px 80px rgba(6, 10, 20, 0.55);
+}
+
 body {
   overflow-x: hidden;
   position: relative;
-  background: rgb(25, 25, 31);
-  background-color: rgb(25, 25, 31);
   background: radial-gradient(
-    circle,
-    rgba(25, 25, 31, 1) 0%,
-    rgba(41, 41, 51, 1) 100%
-  );
+      1200px 600px at 10% 10%,
+      rgba(255, 180, 84, 0.12),
+      transparent 60%
+    ),
+    radial-gradient(
+      1000px 600px at 90% 20%,
+      rgba(63, 209, 194, 0.12),
+      transparent 60%
+    ),
+    #0f1116;
   width: 100vw;
   height: 100%;
+  font-family: "IBM Plex Sans", system-ui, sans-serif;
+  color: var(--text-secondary);
 
   img {
     width: 100%;
@@ -76,11 +103,12 @@ body {
   h4,
   h5,
   h6,
-  li,
   button {
     text-transform: uppercase;
-    color: $lottery-white;
-    font-weight: 700;
+    color: var(--text-primary);
+    font-family: "Space Grotesk", system-ui, sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.02em;
   }
 
   h1 {
@@ -117,13 +145,26 @@ body {
   li,
   a {
     font-size: $font-size-mobile;
-    line-height: 18px;
-    font-family: area-normal;
-    color: $lottery-grey;
-    font-weight: 500;
+    line-height: 20px;
+    font-family: "IBM Plex Sans", system-ui, sans-serif;
+    color: var(--text-secondary);
+    font-weight: 400;
   }
 
   li {
     font-size: $font-size-li;
+    color: var(--text-primary);
+    font-weight: 600;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }

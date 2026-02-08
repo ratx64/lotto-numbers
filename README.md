@@ -1,6 +1,6 @@
 # Lotto Numbers
 
-The "Lotto Numbers" project is a comprehensive repository designed to generate optimal lotto numbers specifically for the EuroJackpot lottery. It offers a user-friendly solution that combines a powerful algorithm with historical data retrieval, enabling users to generate and explore optimal number combinations.
+The "Lotto Numbers" project is a repository designed to generate a single suggested EuroJackpot ticket per click. It combines a lightweight heuristic algorithm with historical data retrieval, enabling users to generate and explore varied number combinations without implying any predictive advantage.
 <br><br>
 
 ![github preview image](./public/github-preview.webp)
@@ -14,12 +14,15 @@ To use this repository, follow these steps:
 3. Run the development server using `npm run dev`.
 4. Open your web browser and navigate to `http://localhost:5173` to view the application.
 
+To refresh the historical dataset used by the generator, run `python pastResults.py` to regenerate `eurojackpot_data.csv` and `eurojackpot_data.json`.
+
 ## Features
 
-- Generates optimal EuroJackpot numbers based on a predefined algorithm.
+- Generates one suggested EuroJackpot ticket per click using rotating, lightweight heuristics.
 - Fetches past EuroJackpot data for reference.
 - Provides a user interface to view the generated numbers and star numbers.
-- Allows generating new optimal numbers on demand.
+- Includes clear probability disclaimers and a short rationale for each suggestion.
+- Allows generating new suggestions on demand.
 
 To automate testing and guarantee a consistent coding style, this repository utilizes the following tools:
 
